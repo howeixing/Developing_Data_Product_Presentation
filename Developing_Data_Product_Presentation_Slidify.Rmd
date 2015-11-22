@@ -1,0 +1,84 @@
+---
+title       : Body Mass Index (BMI) Calculator
+subtitle    : A Healthcare Shiny Application To Measure Your BMI
+author      : Ho Weixing
+job         : Analyst
+framework   : revealjs        
+highlighter : highlight.js  
+hitheme     : zenburn   
+widgets     : [mathjax]           
+mode        : selfcontained 
+knit        : slidify::knit2slides
+revealjs:
+  theme: sky
+  transition: concave
+  center: "true"
+---
+
+### Body Mass Index (BMI) Calculator
+##### by Weixing Ho
+A Healthcare Shiny Application To Measure Your BMI
+
+
+---
+
+### What is BMI?
+
+Based on the definition of BMI from  [Live Science](http://www.livescience.com/40507-what-is-bmi.html):
+
+> The body mass index, or BMI, <br> is a metric used 
+> to estimate the amount of body fat a person has. 
+
+Only two measurements are involved for BMI calculation, which are height(m) and weight(kg).
+
+To calculate your BMI using kilograms and centimeters, divide your weight by your height squared.
+
+$$\dfrac{mass(kg)}{height (m)^2} \ $$
+
+---
+
+### How to calculate BMI?
+Based on the data that given by user, the application will calculate the user's BMI and shows his/her BMI status.
+
+The BMI calculation algorithm is
+
+```{r, echo=TRUE}
+Height_CM <- 168
+Weight_kg <- 60
+bmi <- (Weight_kg/ ((Height_CM ^2)*0.0001)) 
+bmi
+```
+
+---
+
+### BMI Status
+
+Our application will also shows the user's BMI status based on the condition below after it calculate the user's BMI metric. 
+
+```{r, echo=TRUE}
+
+# if (bmi < 15.0) {print('Very severely underweight')}
+# else (bmi <= 16.0) {print('Severely underweight')} 
+# else (bmi <= 18.5) {print('Underweight')}
+# else (bmi <= 25.0) {print('Normal')}   
+# else (bmi <= 30.0) {print('Overweight') }
+# else (bmi <= 35.0) {print('Obese Class I(Moderately obese)') } 
+# else (bmi <= 40.0) {print('Obese Class II (Severely obese)') }  
+# else {print('Obese Class III (Very severely obese)') }
+```
+Standard BMI Range is:<br>
+-Underweight: BMI is less than 18.5<br>
+-Normal weight: BMI is 18.5 to 24.99<br>
+-Overweight: BMI is 25 to 29.99<br>
+-Obese: BMI is 30 or more<br>
+
+---
+### Reference Documentation
+<br>
+Apart from that, we have included the explaination on this application functionality and some additional information on BMI from [Medical News Today Website](http://www.medicalnewstoday.com/info/obesity/what-is-bmi.php)
+<br><br>
+Moreover, we also added the BMI calculations formula to the users for reference purpose.
+
+The link to Shiny Application on Rstudio Shiny's Server:-
+[Health Care Application: Body Mass Index (BMI) Calculator](https://howeixing.shinyapps.io/Developing_Data_Product_Assignment_BMI_Calculator)
+
